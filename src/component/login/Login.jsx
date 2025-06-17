@@ -1,19 +1,27 @@
+// Component Imports
 import Footer from "../Footer";
 import Homes from "./Homes";
+
+// Image Import
+import MobileCartImage from "../../assets/img/mobile-cart.png";
 
 const Login = () => {
   return (
     <div>
       <Homes />
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-29 mb-20 ">
+
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-29 mb-20">
+        {/* Image Section */}
         <div className="mt-12 flex justify-center lg:justify-start">
           <img
-            src="src/assets/img/mobile-cart.png"
-            alt=""
+            src={MobileCartImage}
+            alt="Mobile Cart"
             width={700}
             className="h-auto max-w-full"
           />
         </div>
+
+        {/* Login Form */}
         <div className="w-full lg:w-auto mt-10 lg:mt-67">
           <h1 className="text-3xl lg:text-4xl font-semibold text-center lg:text-left">
             Log in to Exclusive
@@ -44,6 +52,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+
       <Footer />
     </div>
   );

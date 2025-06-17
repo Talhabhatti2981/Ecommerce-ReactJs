@@ -1,3 +1,5 @@
+import React from "react";
+
 import { CiTwitter } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { RiLinkedinLine } from "react-icons/ri";
@@ -7,6 +9,12 @@ import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+
+// ✅ Image imports
+import tomImg from "../../assets/img/tom.png";
+import emmaImg from "../../assets/img/emma.png";
+import willImg from "../../assets/img/will.png";
+import jackImg from "../../assets/img/jack.jpg";
 
 const Team = () => {
   return (
@@ -26,13 +34,7 @@ const Team = () => {
         {/* Team Members */}
         <SwiperSlide>
           <div className="text-center">
-            <img
-              src="src/assets/img/tom.png"
-              alt="Tom Cruise"
-              width={330}
-              height={350}
-              className="mx-auto rounded-xl"
-            />
+            <img src={tomImg} alt="Tom Cruise" width={330} height={350} className="mx-auto rounded-xl" />
             <h1 className="text-[30px] mt-7 font-semibold">Tom Cruise</h1>
             <p>Founder & Chairman</p>
             <div className="flex justify-center gap-3 mt-3">
@@ -45,13 +47,7 @@ const Team = () => {
 
         <SwiperSlide>
           <div className="text-center">
-            <img
-              src="src/assets/img/emma.png"
-              alt="Emma Watson"
-              width={330}
-              height={350}
-              className="mx-auto rounded-xl"
-            />
+            <img src={emmaImg} alt="Emma Watson" width={330} height={350} className="mx-auto rounded-xl" />
             <h1 className="text-[30px] mt-7 font-semibold">Emma Watson</h1>
             <p>Managing Director</p>
             <div className="flex justify-center gap-3 mt-3">
@@ -64,13 +60,7 @@ const Team = () => {
 
         <SwiperSlide>
           <div className="text-center">
-            <img
-              src="src/assets/img/will.png"
-              alt="Will Smith"
-              width={330}
-              height={350}
-              className="mx-auto rounded-xl"
-            />
+            <img src={willImg} alt="Will Smith" width={330} height={350} className="mx-auto rounded-xl" />
             <h1 className="text-[30px] mt-7 font-semibold">Will Smith</h1>
             <p>Product Designer</p>
             <div className="flex justify-center gap-3 mt-3">
@@ -83,13 +73,7 @@ const Team = () => {
 
         <SwiperSlide>
           <div className="text-center">
-            <img
-              src="src/assets/img/tom.png"
-              alt="Will Smith"
-              width={330}
-              height={350}
-              className="mx-auto rounded-xl"
-            />
+            <img src={tomImg} alt="Jack" width={330} height={350} className="mx-auto rounded-xl" />
             <h1 className="text-[30px] mt-7 font-semibold">Jack</h1>
             <p>Product Designer</p>
             <div className="flex justify-center gap-3 mt-3">
@@ -99,15 +83,10 @@ const Team = () => {
             </div>
           </div>
         </SwiperSlide>
-         <SwiperSlide>
+
+        <SwiperSlide>
           <div className="text-center">
-            <img
-              src="src/assets/img/jack.jpg"
-              alt="Will Smith"
-              width={380}
-              height={350}
-              className="mx-auto rounded-xl"
-            />
+            <img src={jackImg} alt="Will Smith" width={380} height={350} className="mx-auto rounded-xl" />
             <h1 className="text-[30px] mt-7 font-semibold">Will Smith</h1>
             <p>Product Designer</p>
             <div className="flex justify-center gap-3 mt-3">
@@ -117,15 +96,10 @@ const Team = () => {
             </div>
           </div>
         </SwiperSlide>
-         <SwiperSlide>
+
+        <SwiperSlide>
           <div className="text-center">
-            <img
-              src="src/assets/img/tom.png"
-              alt="Will Smith"
-              width={330}
-              height={350}
-              className="mx-auto rounded-xl"
-            />
+            <img src={tomImg} alt="Peter" width={330} height={350} className="mx-auto rounded-xl" />
             <h1 className="text-[30px] mt-7 font-semibold">Peter</h1>
             <p>Product Designer</p>
             <div className="flex justify-center gap-3 mt-3">
@@ -143,19 +117,18 @@ const Team = () => {
             margin-top: 35px;
             position: relative;
             text-align: center;
-            
           }
 
           .swiper-pagination-bullet {
             background-color: gray;
             opacity: 1;
-            height:10px
+            height: 10px;
           }
 
           .swiper-pagination-bullet-active {
             background-color: red;
-            border:0.5px solid grey;
-            border-radius:50%
+            border: 0.5px solid grey;
+            border-radius: 50%;
           }
         `}
       </style>

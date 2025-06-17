@@ -24,6 +24,7 @@ const ScrollToTopButton = () => {
       >
         <FaArrowUp />
       </button>
+      
     )
   );
 };

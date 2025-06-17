@@ -3,21 +3,37 @@ import Footer from "../Footer";
 import NumericInput from 'react-numeric-input';
 import Homess from "../Wishlist/Homess";
 
+// ✅ Import product images
+import cartImg1 from "../../assets/img/cart-img1.png";
+import cartImg2 from "../../assets/img/cart-img2.png";
+
 const Cart = () => {
+  // List of cart items
+  const cartItems = [
+    {
+      id: 1,
+      name: "LCD Monitor",
+      price: 650,
+      image: cartImg1,
+    },
+    {
+      id: 2,
+      name: "LCD Monitor",
+      price: 1100,
+      image: cartImg2,
+    },
+  ];
+
   return (
     <>
       <Homess />
       <section className="px-4 md:px-10 lg:px-20">
         <div className="flex gap-3 mt-20 text-sm">
-          <Link to="../" className="text-[#808080]">
-            Home
-          </Link>
-          /
-          <Link to="./">
-            Cart
-          </Link>
+          <Link to="../" className="text-[#808080]">Home</Link>
+          / <Link to="./">Cart</Link>
         </div>
 
+        {/* Table Head */}
         <div className="mt-10 flex justify-center overflow-x-auto">
           <ul className="flex justify-around w-full max-w-5xl shadow-md py-6 rounded min-w-[600px] text-center">
             <li className="w-1/4">Product</li>
@@ -27,26 +43,28 @@ const Cart = () => {
           </ul>
         </div>
 
-        {[1, 2].map((item) => (
-          <div key={item} className="mt-10 flex justify-center overflow-x-auto">
+        {/* Cart Items */}
+        {cartItems.map((item) => (
+          <div key={item.id} className="mt-10 flex justify-center overflow-x-auto">
             <div className="flex flex-wrap justify-between w-full max-w-5xl shadow-md py-5 px-4 rounded min-w-[600px]">
               <div className="flex gap-5 w-1/4 items-center">
-                <img src={`src/assets/img/cart-img${item}.png`} alt="" className="w-20" />
-                <h1 className="pt-3 text-sm md:text-base">Lcd Monitor</h1>
+                <img src={item.image} alt={item.name} className="w-20" />
+                <h1 className="pt-3 text-sm md:text-base">{item.name}</h1>
               </div>
               <div className="w-1/4 pt-3 text-center text-sm md:text-base">
-                <h1>$650</h1>
+                <h1>${item.price}</h1>
               </div>
               <div className="w-1/4 pt-2 text-center">
-                <NumericInput min={0} max={100} value={0} className="w-14 mx-auto" />
+                <NumericInput min={0} max={100} value={1} className="w-14 mx-auto" />
               </div>
               <div className="w-1/4 pt-3 text-center text-sm md:text-base">
-                <h1>$650</h1>
+                <h1>${item.price}</h1>
               </div>
             </div>
           </div>
         ))}
 
+        {/* Buttons */}
         <div className="mt-10 mb-10 flex flex-col sm:flex-row justify-between gap-4 items-center">
           <button className="border border-gray-500 cursor-pointer rounded-sm py-3 px-10 font-bold w-full sm:w-auto">
             Return To Shop
@@ -56,6 +74,7 @@ const Cart = () => {
           </button>
         </div>
 
+        {/* Coupon Section */}
         <div className="mt-10 mb-10 flex flex-col sm:flex-row items-start gap-5">
           <input
             type="text"
@@ -67,6 +86,7 @@ const Cart = () => {
           </button>
         </div>
 
+        {/* Cart Summary */}
         <div className="mt-10 border border-black p-6 rounded-md w-full max-w-md ml-auto">
           <h1 className="text-xl font-semibold mb-4">Cart Total</h1>
           <div className="flex justify-between mb-4">
@@ -88,14 +108,13 @@ const Cart = () => {
               to="/Billing"
               className="bg-[#DB4444] rounded-md text-white py-4 px-8 cursor-pointer hover:bg-red-500 text-center"
             >
-              Process To Checkout
+              Proceed To Checkout
             </Link>
           </div>
         </div>
-
       </section>
-              <Footer />
 
+      <Footer />
     </>
   );
 };

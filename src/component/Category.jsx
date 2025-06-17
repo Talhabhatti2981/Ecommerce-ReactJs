@@ -4,17 +4,25 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const categories = [
-  { img: "src/assets/img/phone.png", title: "Phones" },
-  { img: "src/assets/img/computer.png", title: "Computers" },
-  { img: "src/assets/img/watch.png", title: "Watches" },
-  { img: "src/assets/img/camera.png", title: "Camera" },
-  { img: "src/assets/img/head-phone.png", title: "HeadPhone" },
-  { img: "src/assets/img/gamepad.png", title: "Gaming" },
-];
+// Image imports
+import phoneImg from "../assets/img/phone.png";
+import computerImg from "../assets/img/computer.png";
+import watchImg from "../assets/img/watch.png";
+import cameraImg from "../assets/img/camera.png";
+import headphoneImg from "../assets/img/head-phone.png";
+import gamepadImg from "../assets/img/gamepad.png";
+import leftArrow from "../assets/img/left.png";
+import rightArrow from "../assets/img/right.png";
 
-const leftArrow = "src/assets/img/left.png";
-const rightArrow = "src/assets/img/right.png";
+// Category data with imported images
+const categories = [
+  { img: phoneImg, title: "Phones" },
+  { img: computerImg, title: "Computers" },
+  { img: watchImg, title: "Watches" },
+  { img: cameraImg, title: "Camera" },
+  { img: headphoneImg, title: "HeadPhone" },
+  { img: gamepadImg, title: "Gaming" },
+];
 
 const Category = () => {
   return (

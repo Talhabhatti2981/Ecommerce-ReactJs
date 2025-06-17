@@ -1,60 +1,75 @@
 import { Link } from "react-router-dom";
+import { IoEyeOutline } from "react-icons/io5";
+import { MdFavoriteBorder } from "react-icons/md";
+
+// ✅ Importing Product Images
+import dogFoodImg from "../assets/img/dog-food.png";
+import dslrImg from "../assets/img/dslr.png";
+import laptopImg from "../assets/img/laptop.png";
+import facewashImg from "../assets/img/facewash.png";
+import electricCarImg from "../assets/img/electric-car.png";
+import shoesImg from "../assets/img/shoes.png";
+import gameUsbImg from "../assets/img/game-usb.png";
+import jacketImg from "../assets/img/jacket.png";
+
+// ✅ Importing Rating Star
+import starImg from "../assets/img/star.png";
 
 const Product = () => {
   const products = [
     {
       title: "Breed Dry Dog Food",
       price: "$100",
-      image: "src/assets/img/dog-food.png",
+      image: dogFoodImg,
       rating: 5,
       reviews: 65,
     },
     {
       title: "CANON EOS DSLR Camera",
       price: "$360",
-      image: "src/assets/img/dslr.png",
+      image: dslrImg,
       rating: 5,
       reviews: 65,
     },
     {
       title: "ASUS FHD Gaming Laptop",
       price: "$700",
-      image: "src/assets/img/laptop.png",
+      image: laptopImg,
       rating: 5,
       reviews: 65,
     },
     {
       title: "Curology Product Set",
       price: "$500",
-      image: "src/assets/img/facewash.png",
+      image: facewashImg,
       rating: 5,
       reviews: 65,
     },
     {
       title: "Kids Electric Car",
       price: "$960",
-      image: "src/assets/img/electric-car.png",
+      image: electricCarImg,
       rating: 5,
       reviews: 65,
     },
     {
       title: "Jr. Zoom Soccer Cleats",
       price: "$1160",
-      image: "src/assets/img/shoes.png",
+      image: shoesImg,
       rating: 5,
       reviews: 65,
     },
     {
       title: "GP11 Shooter USB Gamepad",
       price: "$660",
-      image: "src/assets/img/game-usb.png",
+      image: gameUsbImg,
       rating: 5,
       reviews: 55,
     },
     {
       title: "Quilted Satin Jacket",
       price: "$660",
-      image: "src/assets/img/jacket.png",
+      image: jacketImg,
       rating: 5,
       reviews: 55,
     },
@@ -80,6 +95,12 @@ const Product = () => {
           {products.map((item, index) => (
             <div key={index}>
               <div className="relative group cursor-pointer">
+                <Link to="/wishlist">
+                  <MdFavoriteBorder className="absolute top-5 left-[235px] w-7 h-7 bg-white rounded-full p-1 shadow" />
+                </Link>
+                <Link to="/">
+                  <IoEyeOutline className="absolute top-16 left-[235px] w-7 h-7 bg-white rounded-full p-1 shadow" />
+                </Link>
                 <img
                   src={item.image}
                   alt={item.title}
@@ -94,22 +115,17 @@ const Product = () => {
               </div>
               <h1 className="font-semibold pt-4">{item.title}</h1>
               <div className="flex items-center gap-2 mt-3">
-                <span className="text-[#DB4444] font-semibold">
-                  {item.price}
-                </span>
+                <span className="text-[#DB4444] font-semibold">{item.price}</span>
                 {Array.from({ length: item.rating }).map((_, i) => (
                   <img
                     key={i}
-                    src="src/assets/img/star.png"
+                    src={starImg}
                     alt="star"
                     className="w-4 h-4"
                   />
                 ))}
-                <span className="text-sm text-gray-600">
-                  ({item.reviews})
-                </span>
+                <span className="text-sm text-gray-600">({item.reviews})</span>
               </div>
-              {/* Optional color dots */}
               {index >= 4 && (
                 <div className="relative mt-2 flex gap-1">
                   <div className="rounded-full h-4 w-4 border border-black"></div>

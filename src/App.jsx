@@ -13,6 +13,7 @@ import SignUp from './component/signup/SignUp';
 import Login from './component/login/Login';
 import AboutUs from './component/About/AboutUs'; 
 import Cart from './component/Cart/cart';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -23,8 +24,10 @@ import Billing from './component/Billing/Billing';
 import Account from './component/Account/Acount';
 import Wishlist from './component/Wishlist/Wishlist';
 import Products from './component/ProductList/Products';
+import ScrollToTopButton from '../Arrow';
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route path="/signup" element={<SignUp />} />
@@ -37,7 +40,7 @@ function App() {
         <Route path ="/Account" element={<Account />}/>
         <Route path ="/Wishlist" element={<Wishlist/>}/>
         <Route path = "/Products" element={<Products/>}/>
-
+        <Route path = "/ScrollToTopButton" element ={<ScrollToTopButton/>}/>
 
         <Route path="/" element={
           <>
